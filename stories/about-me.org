@@ -1,0 +1,13 @@
+#+BEGIN_COMMENT
+.. title: About Me
+.. slug: about-me
+.. date: 2015-10-25 01:59:41 UTC-04:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+Hi! I'm a PhD student in Chemical Engineering at the University of Notre Dame.
