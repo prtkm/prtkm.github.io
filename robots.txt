@@ -1,0 +1,4 @@
+Sitemap: https://prtkm.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: prtkm.github.io

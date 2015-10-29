@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Changing default atom colors in VESTA to ASE/Jmol colors | Prateek Mehta</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/">
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]--><meta name="author" content="Prateek Mehta">
+<meta property="og:site_name" content="Prateek Mehta">
+<meta property="og:title" content="Changing default atom colors in VESTA to ASE/Jmol colors">
+<meta property="og:url" content="https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/">
+<meta property="og:description" content="Vesta is a 3D visualization package for atomic models, volumetric data like charge densities, etc. I mostly use the ase-gui for visualization because it can be automated in python (and often render th">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-10-29T00:43:38-04:00">
+<meta property="article:tag" content="ase">
+<meta property="article:tag" content="colors">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="vesta">
+</head>
+<body>
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="../about-me" title="About me"><i class="icon-user"></i></a></li>
+            <li><a href="https://linkedin.com/in/prtkm" title="Connect with me on LinkedIn"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://twitter.com/prtk_m" title="Follow me on Twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://github.com/prtkm" title="Find me on Github"><i class="icon-github"></i></a></li>
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Changing default atom colors in VESTA to ASE/Jmol colors</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2015-10-29T00:43:38-04:00">2015-10-29 00:43</time>
+            
+                      |  
+        <a href="index.org" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../categories/ase/" rel="tag">ase</a></li>
+           <li><a class="tag p-category" href="../../categories/colors/" rel="tag">colors</a></li>
+           <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+           <li><a class="tag p-category" href="../../categories/vesta/" rel="tag">vesta</a></li>
+        </ul>
+</div>
+
+        </div>
+        <div class="body">
+            <p>
+<a href="http://jp-minerals.org/vesta/en/">Vesta</a> is a 3D visualization package for atomic models, volumetric data like charge densities, etc. I mostly use the <a href="https://wiki.fysik.dtu.dk/ase/ase/gui/gui.html">ase-gui</a> for visualization because it can be automated in python (and often render the images with povray), but sometimes Vesta is useful for plotting things like charge density differences <sup><a id="fnr.1" name="fnr.1" class="footref" href=".#fn.1">1</a></sup>, or for making more sophisticated images showing bonds, polyhedra, etc. The issue is that ase-gui and Vesta use different colors for the atoms which lead to inconsistent colors if one uses both. Here is a methanol molecule with the old VESTA colors.
+</p>
+
+
+<div class="figure">
+<p><img src="../../images/methanol-old.png" alt="methanol-old.png"></p>
+</div>
+
+<p>
+I like the ASE colors, so here I modify the VESTA color list to be consistent with ASE. To do this we need to modify the <code>elements.ini</code> file, located at <code>VESTA/VESTA.app/Contents/Resources</code> on my Mac (the relative path in the directory is probably different on my linux machine).
+</p>
+
+<p>
+Here is what the structure of the file looks like
+</p>
+
+<div class="highlight"><pre>head ../files/elements.ini
+</pre></div>
+
+<pre class="example">
+1  H  0.46  1.20  0.200    1.00000    0.80000    0.80000
+1  D  0.46  1.20  0.200    0.80000    0.80000    1.00000
+2 He  1.22  1.40  1.220    0.98907    0.91312    0.81091
+3 Li  1.57  1.40  0.590    0.52731    0.87953    0.45670
+4 Be  1.12  1.40  0.270    0.37147    0.84590    0.48292
+5  B  0.81  1.40  0.110    0.12490    0.63612    0.05948
+6  C  0.77  1.70  0.150    0.50430    0.28659    0.16236
+7  N  0.74  1.55  1.460    0.69139    0.72934    0.90280
+8  O  0.74  1.52  1.400    0.99997    0.01328    0.00000
+9  F  0.72  1.47  1.330    0.69139    0.72934    0.90280
+</pre>
+
+<p>
+The first three columns after the elements seem to be values for the atomic, van der Waals, and ionic radii. The next three numbers are the colors. They are basically rgb colors normalized by 255. All we have to do is to replace these numbers by the corresponding jmol colors. Here is some code that does that.
+</p>
+
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">ase.data.colors</span> <span class="kn">import</span> <span class="n">jmol_colors</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'../files/elements.ini'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s">'../files/new_elements.ini'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+	<span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+	<span class="k">if</span> <span class="n">sym</span> <span class="ow">is</span> <span class="s">'D'</span><span class="p">:</span>
+	    <span class="c"># Rewrite the old line</span>
+	    <span class="n">new_line</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">]</span>
+	    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>        
+	    <span class="k">continue</span>
+
+	<span class="k">if</span> <span class="n">sym</span> <span class="ow">is</span> <span class="s">'XX'</span><span class="p">:</span>
+	    <span class="n">new_c1</span><span class="p">,</span> <span class="n">new_c2</span><span class="p">,</span> <span class="n">new_c3</span> <span class="o">=</span> <span class="n">jmol_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">new_c1</span><span class="p">,</span> <span class="n">new_c2</span><span class="p">,</span> <span class="n">new_c3</span> <span class="o">=</span> <span class="n">jmol_colors</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+
+	    <span class="n">new_line</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">new_c1</span><span class="p">,</span> <span class="n">new_c2</span><span class="p">,</span> <span class="n">new_c3</span><span class="p">]</span>
+	    <span class="c"># Get the right pretty printed format with this ugly </span>
+	    <span class="c"># looking command</span>
+	    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'''{0:&gt;3} {1:&gt;2}  {2}  {3}  {4}    </span><span class="se">\</span>
+<span class="s">{5:1.5f}    {6:1.5f}    {7:1.5f}</span><span class="se">\n</span><span class="s">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">new_line</span><span class="p">))</span>
+</pre></div>
+
+
+<p>
+Let's look at the new file to see if it looks correct.
+</p>
+
+<div class="highlight"><pre>head ../files/new_elements.ini
+</pre></div>
+
+<pre class="example">
+1  H  0.46  1.20  0.200    1.00000    1.00000    1.00000
+1  D  0.46  1.20  0.200    0.80000    0.80000    1.00000
+2 He  1.22  1.40  1.220    0.85100    1.00000    1.00000
+3 Li  1.57  1.40  0.590    0.80000    0.50200    1.00000
+4 Be  1.12  1.40  0.270    0.76100    1.00000    0.00000
+5  B  0.81  1.40  0.110    1.00000    0.71000    0.71000
+6  C  0.77  1.70  0.150    0.56500    0.56500    0.56500
+7  N  0.74  1.55  1.460    0.18800    0.31400    0.97300
+8  O  0.74  1.52  1.400    1.00000    0.05100    0.05100
+9  F  0.72  1.47  1.330    0.56500    0.87800    0.31400
+</pre>
+
+<p>
+We can now replace our old file with this one and get the colors we want. You can find the file <a href="../../files/new_elements.ini">here</a>.
+</p>
+
+<p>
+Here is the new methanol image. That looks a lot more like I'm used to!
+</p>
+
+
+<div class="figure">
+<p><img src="../../images/methanol-new.png" alt="methanol-new.png"></p>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href=".#fnr.1">1</a></sup><p class="footpara">
+Of course one can also do this using Mayavi in python.
+</p>
+</div>
+
+
+</div>
+</div>
+        </div>
+                <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../hello-org/" rel="prev" title="Hello Org!">Previous post</a>
+            </li>
+        </ul>
+</div>
+                    <footer id="footer"><p>Contents © 2015         <a href="mailto:prateekmehta.in@gmail.com">Prateek Mehta</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js" type="text/javascript"></script><script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Prateek Mehta (visualization)</title><link>https://prtkm.github.io/</link><description></description><atom:link href="https://prtkm.github.io/categories/cat_visualization.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 29 Oct 2015 07:32:36 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Changing default atom colors in VESTA to ASE/Jmol colors</title><link>https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/</link><dc:creator>Prateek Mehta</dc:creator><description>&lt;p&gt;
+&lt;a href="http://jp-minerals.org/vesta/en/"&gt;Vesta&lt;/a&gt; is a 3D visualization package for atomic models, volumetric data like charge densities, etc. I mostly use the &lt;a href="https://wiki.fysik.dtu.dk/ase/ase/gui/gui.html"&gt;ase-gui&lt;/a&gt; for visualization because it can be automated in python (and often render the images with povray), but sometimes Vesta is useful for plotting things like charge density differences &lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;, or for making more sophisticated images showing bonds, polyhedra, etc. The issue is that ase-gui and Vesta use different colors for the atoms which lead to inconsistent colors if one uses both. Here is a methanol molecule with the old VESTA colors.
+&lt;/p&gt;
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;img src="https://prtkm.github.io/images/methanol-old.png" alt="methanol-old.png"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+I like the ASE colors, so here I modify the VESTA color list to be consistent with ASE. To do this we need to modify the &lt;code&gt;elements.ini&lt;/code&gt; file, located at &lt;code&gt;VESTA/VESTA.app/Contents/Resources&lt;/code&gt; on my Mac (the relative path in the directory is probably different on my linux machine).
+&lt;/p&gt;
+
+&lt;p&gt;
+Here is what the structure of the file looks like
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;head ../files/elements.ini
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+1  H  0.46  1.20  0.200    1.00000    0.80000    0.80000
+1  D  0.46  1.20  0.200    0.80000    0.80000    1.00000
+2 He  1.22  1.40  1.220    0.98907    0.91312    0.81091
+3 Li  1.57  1.40  0.590    0.52731    0.87953    0.45670
+4 Be  1.12  1.40  0.270    0.37147    0.84590    0.48292
+5  B  0.81  1.40  0.110    0.12490    0.63612    0.05948
+6  C  0.77  1.70  0.150    0.50430    0.28659    0.16236
+7  N  0.74  1.55  1.460    0.69139    0.72934    0.90280
+8  O  0.74  1.52  1.400    0.99997    0.01328    0.00000
+9  F  0.72  1.47  1.330    0.69139    0.72934    0.90280
+&lt;/pre&gt;
+
+&lt;p&gt;
+The first three columns after the elements seem to be values for the atomic, van der Waals, and ionic radii. The next three numbers are the colors. They are basically rgb colors normalized by 255. All we have to do is to replace these numbers by the corresponding jmol colors. Here is some code that does that.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ase.data.colors&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;jmol_colors&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'../files/elements.ini'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;lines&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readlines&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'../files/new_elements.ini'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'w'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;lines&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+	&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sym&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+	&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;sym&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="s"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+	    &lt;span class="c"&gt;# Rewrite the old line&lt;/span&gt;
+	    &lt;span class="n"&gt;new_line&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sym&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+	    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;        
+	    &lt;span class="k"&gt;continue&lt;/span&gt;
+
+	&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;sym&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="s"&gt;'XX'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+	    &lt;span class="n"&gt;new_c1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;jmol_colors&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+	&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+	    &lt;span class="n"&gt;new_c1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;jmol_colors&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+
+	    &lt;span class="n"&gt;new_line&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sym&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;r3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_c3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+	    &lt;span class="c"&gt;# Get the right pretty printed format with this ugly &lt;/span&gt;
+	    &lt;span class="c"&gt;# looking command&lt;/span&gt;
+	    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'''{0:&amp;gt;3} {1:&amp;gt;2}  {2}  {3}  {4}    &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="s"&gt;{5:1.5f}    {6:1.5f}    {7:1.5f}&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;'''&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;new_line&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;
+Let's look at the new file to see if it looks correct.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;head ../files/new_elements.ini
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+1  H  0.46  1.20  0.200    1.00000    1.00000    1.00000
+1  D  0.46  1.20  0.200    0.80000    0.80000    1.00000
+2 He  1.22  1.40  1.220    0.85100    1.00000    1.00000
+3 Li  1.57  1.40  0.590    0.80000    0.50200    1.00000
+4 Be  1.12  1.40  0.270    0.76100    1.00000    0.00000
+5  B  0.81  1.40  0.110    1.00000    0.71000    0.71000
+6  C  0.77  1.70  0.150    0.56500    0.56500    0.56500
+7  N  0.74  1.55  1.460    0.18800    0.31400    0.97300
+8  O  0.74  1.52  1.400    1.00000    0.05100    0.05100
+9  F  0.72  1.47  1.330    0.56500    0.87800    0.31400
+&lt;/pre&gt;
+
+&lt;p&gt;
+We can now replace our old file with this one and get the colors we want. You can find the file &lt;a href="https://prtkm.github.io/files/new_elements.ini"&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+Here is the new methanol image. That looks a lot more like I'm used to!
+&lt;/p&gt;
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;img src="https://prtkm.github.io/images/methanol-new.png" alt="methanol-new.png"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+Of course one can also do this using Mayavi in python.
+&lt;/p&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>ase</category><category>colors</category><category>python</category><category>vesta</category><guid>https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/</guid><pubDate>Thu, 29 Oct 2015 04:43:38 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,64 @@
+#+BEGIN_COMMENT
+.. title: Hello Org!
+.. slug: hello-org
+.. date: 2015-10-24 03:32:44 UTC-04:00
+.. tags: orgmode, configuration
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+Here I try to make an example post using org-mode. I am using the orgmode plugin for Nikola found [[https://plugins.getnikola.com/#orgmode][here]]. 
+
+First let's embed a code block. The org extension to Nikola uses pygments to colorize code blocks. To do that we need to make some modifications to the css file provided by my theme zen-jinja.
+
+#+BEGIN_SRC sh
+pygmentize -S default -a .highlight -f html >> custom.css
+cat custom.css >> ../themes/zen-jinja/assets/css/main.css
+rm custom.css
+#+END_SRC
+
+#+RESULTS:
+
+Now we can have a python code block that makes a plot.
+
+#+BEGIN_SRC python
+import matplotlib.pyplot as plt
+
+plt.plot([1,2,4], [1,2,4])
+plt.savefig('../images/demo-plot.png')
+#+END_SRC
+
+#+RESULTS:
+
+#+ATTR_HTML: width="200px"
+[[file:../../images/demo-plot.png]]
+
+To get this to show up on the website I had to specify the image link as 
+
+#+BEGIN_EXAMPLE
+[[file:../../images/demo-plot.png]]
+#+END_EXAMPLE
+
+This is a little weird since the path in link is different from where I actually save the image. This is because when nikola builds the post it is saved as ~/output/posts/hello-org/index.html~ and the image path is two levels up in ~/output/images/~. It will probably require some rearrangement in ~conf.py~ to get the images to show up both inline in my org file and in the exported html.
+
+
+Now let's add an equation to see if it gets rendered with MathJax.
+
+\begin{equation}
+y = e^{x}
+\end{equation}
+
+I had to set 
+
+#+BEGIN_SRC python
+MATHJAX_CONFIG = '''
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+'''
+#+END_SRC
+
+in the ~conf.py~ file to get this to work.
+
+

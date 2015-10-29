@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Prateek Mehta (configuration)</title><link>https://prtkm.github.io/</link><description></description><atom:link href="https://prtkm.github.io/categories/configuration.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 29 Oct 2015 07:00:10 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hello Org!</title><link>https://prtkm.github.io/posts/hello-org/</link><dc:creator>Prateek Mehta</dc:creator><description>&lt;p&gt;
+Here I try to make an example post using org-mode. I am using the orgmode plugin for Nikola found &lt;a href="https://plugins.getnikola.com/#orgmode"&gt;here&lt;/a&gt;. 
+&lt;/p&gt;
+
+&lt;p&gt;
+First let's embed a code block. The org extension to Nikola uses pygments to colorize code blocks. To do that we need to make some modifications to the css file provided by my theme zen-jinja.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;pygmentize -S default -a .highlight -f html &amp;gt;&amp;gt; custom.css
+cat custom.css &amp;gt;&amp;gt; ../themes/zen-jinja/assets/css/main.css
+rm custom.css
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Now we can have a python code block that makes a plot.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'../images/demo-plot.png'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;img src="https://prtkm.github.io/images/demo-plot.png" alt="demo-plot.png"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+To get this to show up on the website I had to specify the image link as 
+&lt;/p&gt;
+
+&lt;pre class="example"&gt;
+[[file:../../images/demo-plot.png]]
+&lt;/pre&gt;
+
+&lt;p&gt;
+This is a little weird since the path in link is different from where I actually save the image. This is because when nikola builds the post it is saved as &lt;code&gt;/output/posts/hello-org/index.html&lt;/code&gt; and the image path is two levels up in &lt;code&gt;/output/images/&lt;/code&gt;. It will probably require some rearrangement in &lt;code&gt;conf.py&lt;/code&gt; to get the images to show up both inline in my org file and in the exported html.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Now let's add an equation to see if it gets rendered with MathJax.
+&lt;/p&gt;
+
+\begin{equation}
+y = e^{x}
+\end{equation}
+
+&lt;p&gt;
+I had to set 
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;MATHJAX_CONFIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'''&lt;/span&gt;
+&lt;span class="s"&gt;&amp;lt;script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="s"&gt;'''&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+in the &lt;code&gt;conf.py&lt;/code&gt; file to get this to work.
+&lt;/p&gt;</description><category>configuration</category><category>orgmode</category><guid>https://prtkm.github.io/posts/hello-org/</guid><pubDate>Sat, 24 Oct 2015 07:32:44 GMT</pubDate></item></channel></rss>
