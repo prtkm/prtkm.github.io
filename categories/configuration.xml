@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Prateek Mehta (configuration)</title><link>https://prtkm.github.io/</link><description></description><atom:link href="https://prtkm.github.io/categories/configuration.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 29 Oct 2015 20:01:34 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hello Org!</title><link>https://prtkm.github.io/posts/hello-org/</link><dc:creator>Prateek Mehta</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Prateek Mehta (Posts about configuration)</title><link>https://prtkm.github.io/</link><description></description><atom:link href="https://prtkm.github.io/categories/configuration.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Sun, 25 Mar 2018 00:50:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hello Org!</title><link>https://prtkm.github.io/posts/hello-org/</link><dc:creator>Prateek Mehta</dc:creator><description>&lt;p&gt;
 Here I try to make an example post using org-mode. I am using the orgmode plugin for Nikola found &lt;a href="https://plugins.getnikola.com/#orgmode"&gt;here&lt;/a&gt;. 
 &lt;/p&gt;
 
@@ -7,7 +7,7 @@ Here I try to make an example post using org-mode. I am using the orgmode plugin
 First let's embed a code block. The org extension to Nikola uses pygments to colorize code blocks. To do that we need to make some modifications to the css file provided by my theme zen-jinja.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;pygmentize -S default -a .highlight -f html &amp;gt;&amp;gt; custom.css
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pygmentize -S default -a .highlight -f html &amp;gt;&amp;gt; custom.css
 cat custom.css &amp;gt;&amp;gt; ../themes/zen-jinja/assets/css/main.css
 rm custom.css
 &lt;/pre&gt;&lt;/div&gt;
@@ -16,10 +16,10 @@ rm custom.css
 Now we can have a python code block that makes a plot.
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'../images/demo-plot.png'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'../images/demo-plot.png'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -53,9 +53,9 @@ y = e^{x}
 I had to set 
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;MATHJAX_CONFIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'''&lt;/span&gt;
-&lt;span class="s"&gt;&amp;lt;script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class="s"&gt;'''&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MATHJAX_CONFIG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'''&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;lt;script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="s1"&gt;'''&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

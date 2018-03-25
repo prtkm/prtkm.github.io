@@ -58,7 +58,7 @@ article: http://ogp.me/ns/article#
         </div>
         <div class="body">
             <p>
-<a href="http://jp-minerals.org/vesta/en/">Vesta</a> is a 3D visualization package for atomic models, volumetric data like charge densities, etc. I mostly use the <a href="https://wiki.fysik.dtu.dk/ase/ase/gui/gui.html">ase-gui</a> for visualization because it can be automated in python (and often render the images with povray), but sometimes Vesta is useful for plotting things like charge density differences <sup><a id="fnr.1" name="fnr.1" class="footref" href=".#fn.1">1</a></sup>, or for making more sophisticated images showing bonds, polyhedra, etc. The issue is that ase-gui and Vesta use different colors for the atoms which lead to inconsistent colors if one uses both. Here is a methanol molecule with the old VESTA colors.
+<a href="http://jp-minerals.org/vesta/en/">Vesta</a> is a 3D visualization package for atomic models, volumetric data like charge densities, etc. I mostly use the <a href="https://wiki.fysik.dtu.dk/ase/ase/gui/gui.html">ase-gui</a> for visualization because it can be automated in python (and often render the images with povray), but sometimes Vesta is useful for plotting things like charge density differences <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>, or for making more sophisticated images showing bonds, polyhedra, etc. The issue is that ase-gui and Vesta use different colors for the atoms which lead to inconsistent colors if one uses both. Here is a methanol molecule with the old VESTA colors.
 </p>
 
 
@@ -74,7 +74,7 @@ I like the ASE colors, so here I modify the VESTA color list to be consistent wi
 Here is what the structure of the file looks like
 </p>
 
-<div class="highlight"><pre>head ../files/elements.ini
+<div class="highlight"><pre><span></span>head ../files/elements.ini
 </pre></div>
 
 <pre class="example">
@@ -94,32 +94,32 @@ Here is what the structure of the file looks like
 The first three columns after the elements seem to be values for the atomic, van der Waals, and ionic radii. The next three numbers are the colors. They are basically rgb colors normalized by 255. All we have to do is to replace these numbers by the corresponding jmol colors. Here is some code that does that.
 </p>
 
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">ase.data.colors</span> <span class="kn">import</span> <span class="n">jmol_colors</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.data.colors</span> <span class="kn">import</span> <span class="n">jmol_colors</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'../files/elements.ini'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'../files/elements.ini'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
-<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s">'../files/new_elements.ini'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">'../files/new_elements.ini'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 	<span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
-	<span class="k">if</span> <span class="n">sym</span> <span class="ow">is</span> <span class="s">'D'</span><span class="p">:</span>
-	    <span class="c"># Rewrite the old line</span>
-	    <span class="n">new_line</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">]</span>
+	<span class="k">if</span> <span class="n">sym</span> <span class="ow">is</span> <span class="s1">'D'</span><span class="p">:</span>
+	    <span class="c1"># Rewrite the old line</span>
+	    <span class="n">new_line</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">]</span>
 	    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>        
 	    <span class="k">continue</span>
 
-	<span class="k">if</span> <span class="n">sym</span> <span class="ow">is</span> <span class="s">'XX'</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">sym</span> <span class="ow">is</span> <span class="s1">'XX'</span><span class="p">:</span>
 	    <span class="n">new_c1</span><span class="p">,</span> <span class="n">new_c2</span><span class="p">,</span> <span class="n">new_c3</span> <span class="o">=</span> <span class="n">jmol_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 	<span class="k">else</span><span class="p">:</span>
 	    <span class="n">new_c1</span><span class="p">,</span> <span class="n">new_c2</span><span class="p">,</span> <span class="n">new_c3</span> <span class="o">=</span> <span class="n">jmol_colors</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
 
 	    <span class="n">new_line</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">sym</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">new_c1</span><span class="p">,</span> <span class="n">new_c2</span><span class="p">,</span> <span class="n">new_c3</span><span class="p">]</span>
-	    <span class="c"># Get the right pretty printed format with this ugly </span>
-	    <span class="c"># looking command</span>
-	    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'''{0:&gt;3} {1:&gt;2}  {2}  {3}  {4}    </span><span class="se">\</span>
-<span class="s">{5:1.5f}    {6:1.5f}    {7:1.5f}</span><span class="se">\n</span><span class="s">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">new_line</span><span class="p">))</span>
+	    <span class="c1"># Get the right pretty printed format with this ugly </span>
+	    <span class="c1"># looking command</span>
+	    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'''{0:&gt;3} {1:&gt;2}  {2}  {3}  {4}    </span><span class="se">\</span>
+<span class="s1">{5:1.5f}    {6:1.5f}    {7:1.5f}</span><span class="se">\n</span><span class="s1">'''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">new_line</span><span class="p">))</span>
 </pre></div>
 
 
@@ -127,7 +127,7 @@ The first three columns after the elements seem to be values for the atomic, van
 Let's look at the new file to see if it looks correct.
 </p>
 
-<div class="highlight"><pre>head ../files/new_elements.ini
+<div class="highlight"><pre><span></span>head ../files/new_elements.ini
 </pre></div>
 
 <pre class="example">
@@ -160,7 +160,7 @@ Here is the new methanol image. That looks a lot more like I'm used to!
 <div id="text-footnotes">
 
 <div class="footdef">
-<sup><a id="fn.1" name="fn.1" class="footnum" href=".#fnr.1">1</a></sup><p class="footpara">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup><p class="footpara">
 Of course one can also do this using Mayavi in python.
 </p>
 </div>
@@ -174,28 +174,8 @@ Of course one can also do this using Mayavi in python.
                 <a href="../hello-org/" rel="prev" title="Hello Org!">Previous post</a>
             </li>
         </ul>
-<div id="disqus_thread"></div>
-        <script>
-        var disqus_shortname ="prtkm",
-            disqus_url="https://prtkm.github.io/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors/",
-        disqus_title="Changing default atom colors in VESTA to ASE/Jmol colors",
-        disqus_identifier="cache/posts/changing-default-atom-colors-in-vesta-to-asejmol-colors.html",
-        disqus_config = function () {
-            this.language = "en";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
-    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-        
-    </div>
-                    <footer id="footer"><p>Contents © 2015         <a href="mailto:prateekmehta.in@gmail.com">Prateek Mehta</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+</div>
+                    <footer id="footer"><p>Contents © 2018         <a href="mailto:prateekmehta.in@gmail.com">Prateek Mehta</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>
