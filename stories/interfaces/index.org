@@ -20,5 +20,5 @@ The emergence of density functional theory (DFT) over the past few decades has e
 
 - P. Mehta, J. Greeley, W.N. Delgass, W.F. Schneider. Adsorption Energy Correlations at the Metal-Support Boundary. ACS Catalysis, 2017, 7, 4707. [[https://doi.org/10.1021/acscatal.7b00979][DOI: 10.1021/acscatal.7b00979]].  [[https://doi.org/10.5281/zenodo.808854][Supporting Dataset: https://zenodo.org/badge/DOI/10.5281/zenodo.808854.svg]]
 
-*Related Poster* [[../../files/interfaces-poster.pdf][(full size)]]
-[[../../images/interfaces-poster.png]]
+*Related Poster* 
+[[../../files/interfaces-poster.pdf][https://prtkm.github.io/images/interfaces-poster.png]]

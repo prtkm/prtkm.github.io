@@ -11,15 +11,16 @@
 #+END_COMMENT
 
 * [[../../stories/ammonia-synthesis/index.html][Advancing Sustainable Ammonia Synthesis Using Plasma-enabled Catalysis]]
-[[../../images/TOC-graphic.png]]
+[[../../stories/ammonia-synthesis/index.html][https://prtkm.github.io/images/TOC-graphic.png]]
 
 # Ammonia, a precursor to fertilizer, is responsible for feeding a large fraction of the global population. Industrially, ammonia is manufactured by the chemical transformation of nitrogen and hydrogen gases via the Haber-Bosch process. The process typically carried out on the surfaces of solid materials known as catalysts. Even with the best-known catalysts, the process is very energy intensive, and requires very high pressures (100-200 atm) and temperatures (700-800 K) for it to be feasible. Reducing these temperature and pressure requirements are a grand challenge for sustainable ammonia synthesis.
 
 # The central idea behind this research is to assist conventional catalysts (metal nanoparticles on metal oxide supports) by applying an electric discharge (also referred to as a non-thermal plasma). Our hypothesis is the plasma can selectively activate the strong triple bond of the nitrogen molecule by vibrational excitation in a way that is not possible by thermal heating in conventional catalysis. In work completed so far, I have developed a computational model based on quantum mechanical density functional theory (DFT) calculations that incorporates the effect of nitrogen vibrational excitation and knowledge of thermal catalysis. Two key insights emerge from this model. The first is that ammonia synthesis rates in the presence of the plasma are expected to be greatly enhanced over thermal rates for a given bulk temperature and pressure. Second, the optimal catalyst materials and active sites in the presence of plasma excitation may not be the same as those for thermal catalysis. Experimental rate measurements by our collaborators confirm that ammonia is produced over metal catalysts at conditions far removed from Haber-Bosch, and the relative trends in activity are found to be consistent with the predicted trends. The work is among the first examples of the computationally guided design of plasma-catalyst systems.
 
 * [[../../stories/free-energy][Accurate Free Energy Models in Catalysis]]
-[[../../images/free-energy.png]]
-
+[[../../stories/free-energy/][https://prtkm.github.io/images/free-energy.png]]
 
 * [[../../stories/interfaces/index.html][Computational Modeling of Catalytic Interfaces]]
-[[../../images/interfaces.png]]
+[[../../stories/interfaces/][http://prtkm.github.io/images/interfaces.png]]
+
+
