@@ -11,7 +11,7 @@
 #+END_COMMENT
 
 
-* Ammonia Synthesis using Plasma-enabled Catalysis
+* Advancing sustainable ammonia synthesis using plasma-enabled catalysis
 
 Ammonia, a precursor to fertilizer, is responsible for feeding a large fraction of the global population. Industrially, ammonia is manufactured by the chemical transformation of nitrogen and hydrogen gases via the Haber-Bosch process. The process typically carried out on the surfaces of solid materials known as catalysts. Even with the best-known catalysts, the process is very energy intensive, and requires very high pressures (100-200 atm) and temperatures (700-800 K) for it to be feasible. Reducing these temperature and pressure requirements are a grand challenge for sustainable ammonia synthesis.
 
@@ -21,9 +21,9 @@ The central idea behind this research is to assist conventional catalysts (metal
 
 - P.Mehta, P.Barboun, F.Herrera, J.Kim, P.Rumbach, D.B.Go, J.C.Hicks, W.F. Schneider. Overcoming Ammonia Synthesis Scaling Relations with Plasma-enabled Catalysis. Nature Catalysis, 2018, accepted. [[https://doi.org/10.1038/s41929-018-0045-1][DOI: 10.1038/s41929-018-0045-1]]  [[https://zenodo.org/record/1171213#.WrhZjmaZPUI][supporting dataset]]
 
-*Related Poster*
+*Related Poster* ([[../../images/NH3-poster.png][full size]])
 
-
+[[../../images/NH3-poster.png]]
 
 
 * Accurate Free Energy Models in Catalysis
