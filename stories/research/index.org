@@ -1,0 +1,18 @@
+#+BEGIN_COMMENT
+.. title: Research
+.. slug: research
+.. date: 2018-03-25 21:38:43 UTC-04:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+* Ammonia Synthesis using Plasma-enabled Catalysis
+
+* Accurate Free Energy Models in Catalysis
+
+* Metal-Support Interactions in Catalysis

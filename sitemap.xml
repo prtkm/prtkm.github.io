@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://prtkm.github.io/</loc>
-  <lastmod>2018-03-26T00:08:00Z</lastmod>
+  <lastmod>2018-03-26T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://prtkm.github.io/2015/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://prtkm.github.io/archive.html</loc>
-  <lastmod>2018-03-25T09:21:00Z</lastmod>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://prtkm.github.io/bootstrap-demo/</loc>
@@ -115,7 +115,7 @@
  </url>
  <url>
   <loc>https://prtkm.github.io/listings/hello.py.html</loc>
-  <lastmod>2018-03-25T09:21:00Z</lastmod>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://prtkm.github.io/path-handlers/</loc>
@@ -142,12 +142,96 @@
   <lastmod>2018-03-25T07:03:00Z</lastmod>
  </url>
  <url>
+  <loc>https://prtkm.github.io/research/</loc>
+  <lastmod>2018-03-26T01:40:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://prtkm.github.io/slides-demo/</loc>
   <lastmod>2018-03-25T07:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://prtkm.github.io/social_buttons/</loc>
   <lastmod>2018-03-25T07:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/a-study-in-scarlet/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/about-me/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/about-nikola/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/bootstrap-demo/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/charts/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/creating-a-theme/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/demo/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/dr-nikolas-vendetta/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/extending/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/handbook/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/internals/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/listings-demo/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/path-handlers/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/quickref/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/quickstart/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/research/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/slides-demo/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/social_buttons/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/theming/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://prtkm.github.io/stories/upgrading-to-v6/</loc>
+  <lastmod>2018-03-26T01:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://prtkm.github.io/theming/</loc>
