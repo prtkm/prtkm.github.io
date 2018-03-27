@@ -10,6 +10,8 @@
 
 #+END_COMMENT
 
+Some of my research projects are shown below. Click on the project images for more details.
+
 * [[../../stories/ammonia-synthesis/index.html][Advancing Sustainable Ammonia Synthesis Using Plasma-enabled Catalysis]]
 [[../../stories/ammonia-synthesis/index.html][https://prtkm.github.io/images/TOC-graphic.png]]
 
