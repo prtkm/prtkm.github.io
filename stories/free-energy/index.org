@@ -18,6 +18,11 @@ Adsorbate free energies are fundamental quantities in the microkinetic modeling 
 
 - A. Bajpai^{#} , P. Mehta^{#} , K. Frey, A. Lehmer, W.F. Schneider, Benchmark First-Principles Calculations of Adsorbate Free Energies. ACS Catalysis, 2018, 8, 1945 (# = co-first author) [[https:doi.org/10.1021/acscatal.7b03438][DOI: 10.1021/acscatal.7b03438]]
 
+#+begin_html
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-badge-details="right" data-badge-type="medium-donut" data-doi="http://10.1021/acscatal.7b03438" data-hide-no-mentions="true" class="altmetric-embed"></div>
+<span class="__dimensions_badge_embed__" data-doi="10.1021/acscatal.7b03438" data-hide-zero-citations="true" data-legend="always"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+#+end_html
+
 *Related Poster*
 
 [[../../files/free-energy-poster.pdf][https://prtkm.github.io/images/free-energy-poster.png]]
