@@ -4,12 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Listings Demo | Prateek Mehta</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/html4css1.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://prtkm.github.io/stories/listings-demo/">
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="U5bsY8excV87-_e8k2t03BZ1mfZmGSBsHstNwcCCX3M">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="U5bsY8excV87-_e8k2t03BZ1mfZmGSBsHstNwcCCX3M">
 <meta name="author" content="Prateek Mehta">
 <meta property="og:site_name" content="Prateek Mehta">
 <meta property="og:title" content="Listings Demo">
@@ -34,41 +39,45 @@ if __name__ == ">
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary static-top mb-4"><div class="container">
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://prtkm.github.io/">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://prtkm.github.io/">
 
-            <span id="blog-title">Prateek Mehta</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav mr-auto">
-<li class="nav-item">
-<a href="../research/" class="nav-link">Research</a>
+                <span id="blog-title">Prateek Mehta</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../research/">Research</a>
                 </li>
-<li class="nav-item">
-<a href="https://scholar.google.com/citations?user=q4hjGykAAAAJ&amp;hl=en" class="nav-link">Publications</a>
+<li>
+<a href="https://scholar.google.com/citations?user=q4hjGykAAAAJ&amp;hl=en">Publications</a>
                 </li>
-<li class="nav-item">
-<a href="../../files/CV-pmehta.pdf" class="nav-link">CV</a>
+<li>
+<a href="../../files/CV-pmehta.pdf">CV</a>
                 </li>
-<li class="nav-item">
-<a href="../../posts/index.html" class="nav-link">Blog</a>
+<li>
+<a href="../../posts/index.html">Blog</a>
                 </li>
-<li class="nav-item">
-<a href="../../archive.html" class="nav-link">Archive</a>
+<li>
+<a href="../../archive.html">Archive</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right">
-<li class="nav-item">
-    <a href="index.rst" id="sourcelink" class="nav-link">Source</a>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
     </li>
-
 
                 
             </ul>
@@ -79,8 +88,9 @@ if __name__ == ">
 </nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        
-        
+        <div class="row">
+            
+            
 <article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Listings Demo</a></h1>
 
         
@@ -89,43 +99,38 @@ if __name__ == ">
     <div>
 <p>Nikola intends to let you show code easily via listings:</p>
 <p><a class="reference external" href="../../listings/hello.py.html">hello.py</a>  <a class="reference external" href="../../listings/hello.py">(Source)</a></p>
-<pre class="code python"><a name="rest_code_11071e7b39f14022b1a1427dc0584f55-1"></a><span class="ch">#!/usr/bin/python</span>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-2"></a>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-3"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-4"></a>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-5"></a>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-6"></a><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'world'</span><span class="p">):</span>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-7"></a>    <span class="n">greeting</span> <span class="o">=</span> <span class="s2">"hello "</span> <span class="o">+</span> <span class="n">name</span>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-8"></a>    <span class="k">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-9"></a>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-10"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<a name="rest_code_11071e7b39f14022b1a1427dc0584f55-11"></a>    <span class="n">hello</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<pre class="code python"><a name="rest_code_653836b2d98e4052bb63f330fb4e7293-1"></a><span class="ch">#!/usr/bin/python</span>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-2"></a>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-3"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-4"></a>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-5"></a>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-6"></a><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'world'</span><span class="p">):</span>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-7"></a>    <span class="n">greeting</span> <span class="o">=</span> <span class="s2">"hello "</span> <span class="o">+</span> <span class="n">name</span>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-8"></a>    <span class="k">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-9"></a>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-10"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a name="rest_code_653836b2d98e4052bb63f330fb4e7293-11"></a>    <span class="n">hello</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 </pre>
 </div>
     </div>
     
 
-</article><!--End of body content--><footer id="footer">
-            Contents © 2018         <a href="mailto:prateekmehta.in@gmail.com">Prateek Mehta</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+</article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2019         <a href="mailto:prateekmehta.in@gmail.com">Prateek Mehta</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
 </div>
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(1, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
-    baguetteBox.run('a.reference:not(.islink)', {
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
-    baguetteBox.run('img:not(.islink)', {
-        captions: function(element) {
-            return element.alt;
-    }});
-    </script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116597400-1"></script><script>
+    </script><!-- end fancy dates --><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116597400-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
