@@ -4,12 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Upgrading to v6 | Prateek Mehta</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/html4css1.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://prtkm.github.io/stories/upgrading-to-v6/">
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="U5bsY8excV87-_e8k2t03BZ1mfZmGSBsHstNwcCCX3M">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="google-site-verification" content="U5bsY8excV87-_e8k2t03BZ1mfZmGSBsHstNwcCCX3M">
 <meta name="author" content="Prateek Mehta">
 <meta property="og:site_name" content="Prateek Mehta">
 <meta property="og:title" content="Upgrading to v6">
@@ -29,41 +34,45 @@ need to change in your">
 
 <!-- Menubar -->
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary static-top mb-4"><div class="container">
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://prtkm.github.io/">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://prtkm.github.io/">
 
-            <span id="blog-title">Prateek Mehta</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="bs-navbar">
-            <ul class="navbar-nav mr-auto">
-<li class="nav-item">
-<a href="../research/" class="nav-link">Research</a>
+                <span id="blog-title">Prateek Mehta</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../research/">Research</a>
                 </li>
-<li class="nav-item">
-<a href="https://scholar.google.com/citations?user=q4hjGykAAAAJ&amp;hl=en" class="nav-link">Publications</a>
+<li>
+<a href="https://scholar.google.com/citations?user=q4hjGykAAAAJ&amp;hl=en">Publications</a>
                 </li>
-<li class="nav-item">
-<a href="../../files/CV-pmehta.pdf" class="nav-link">CV</a>
+<li>
+<a href="../../files/CV-pmehta.pdf">CV</a>
                 </li>
-<li class="nav-item">
-<a href="../../posts/index.html" class="nav-link">Blog</a>
+<li>
+<a href="../../posts/index.html">Blog</a>
                 </li>
-<li class="nav-item">
-<a href="../../archive.html" class="nav-link">Archive</a>
+<li>
+<a href="../../archive.html">Archive</a>
 
                 
             </li>
 </ul>
-<ul class="navbar-nav navbar-right">
-<li class="nav-item">
-    <a href="index.txt" id="sourcelink" class="nav-link">Source</a>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.txt" id="sourcelink">Source</a>
     </li>
-
 
                 
             </ul>
@@ -74,8 +83,9 @@ need to change in your">
 </nav><!-- End of Menubar --><div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
-        
-        
+        <div class="row">
+            
+            
 <article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Upgrading to v6</a></h1>
 
         
@@ -122,11 +132,11 @@ jinja-based theme, upgrading is probably a bad idea right now.</dd>
 using a custom theme. Also, some templates have been tweaked, but nothing should
 break for you.</p>
 <p>Facebook comments support changed the HTML tag to:</p>
-<pre class="code mako"><a name="rest_code_4e6801464e944d45ba2d37a817180f58-1"></a><span class="x">&lt;html</span>
-<a name="rest_code_4e6801464e944d45ba2d37a817180f58-2"></a><span class="cp">%</span><span class="k">if</span> <span class="n">comment_system</span> <span class="o">==</span> <span class="s1">'facebook'</span><span class="p">:</span><span class="x"></span>
-<a name="rest_code_4e6801464e944d45ba2d37a817180f58-3"></a><span class="x">xmlns:fb="http://ogp.me/ns/fb#"</span>
-<a name="rest_code_4e6801464e944d45ba2d37a817180f58-4"></a><span class="cp">%</span><span class="k">endif</span><span class="x"></span>
-<a name="rest_code_4e6801464e944d45ba2d37a817180f58-5"></a><span class="x">lang="</span><span class="cp">${</span><span class="n">lang</span><span class="cp">}</span><span class="x">"&gt;</span>
+<pre class="code mako"><a name="rest_code_c96637774e604fa7bf1d208108e7598f-1"></a><span class="x">&lt;html</span>
+<a name="rest_code_c96637774e604fa7bf1d208108e7598f-2"></a><span class="cp">%</span><span class="k">if</span> <span class="n">comment_system</span> <span class="o">==</span> <span class="s1">'facebook'</span><span class="p">:</span><span class="x"></span>
+<a name="rest_code_c96637774e604fa7bf1d208108e7598f-3"></a><span class="x">xmlns:fb="http://ogp.me/ns/fb#"</span>
+<a name="rest_code_c96637774e604fa7bf1d208108e7598f-4"></a><span class="cp">%</span><span class="k">endif</span><span class="x"></span>
+<a name="rest_code_c96637774e604fa7bf1d208108e7598f-5"></a><span class="x">lang="</span><span class="cp">${</span><span class="n">lang</span><span class="cp">}</span><span class="x">"&gt;</span>
 </pre>
 <p>If you do not want to use Facebook comments, you can leave the old <tt class="docutils literal">&lt;html
 <span class="pre">lang="${lang}"&gt;</span></tt> tag in and it will work just fine.</p>
@@ -150,22 +160,22 @@ should be <strong>exactly</strong> as before.</p>
 story short, anything that had a <tt class="docutils literal">True</tt> as the <tt class="docutils literal">use_in_feeds</tt>
 (last) value goes to <tt class="docutils literal">POSTS</tt> and anything with <tt class="docutils literal">False</tt> goes to
 <tt class="docutils literal">PAGES</tt>.  For example:</p>
-<pre class="code python"><a name="rest_code_a281e9322b514b91bd85ade309b24233-1"></a><span class="n">post_pages</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-2"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-3"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-4"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-5"></a><span class="p">)</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-6"></a>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-7"></a><span class="c1">### becomes ###</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-8"></a>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-9"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-10"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-11"></a><span class="p">)</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-12"></a>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-13"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-14"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-15"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
-<a name="rest_code_a281e9322b514b91bd85ade309b24233-16"></a><span class="p">)</span>
+<pre class="code python"><a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-1"></a><span class="n">post_pages</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-2"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-3"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-4"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-5"></a><span class="p">)</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-6"></a>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-7"></a><span class="c1">### becomes ###</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-8"></a>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-9"></a><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-10"></a>    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-11"></a><span class="p">)</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-12"></a>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-13"></a><span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-14"></a>    <span class="p">(</span><span class="s2">"stories/*.txt"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-15"></a>    <span class="p">(</span><span class="s2">"stories/*.html"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"story.tmpl"</span><span class="p">),</span>
+<a name="rest_code_f2e03dfa68cc4a1e8ce2d4b8236b5edd-16"></a><span class="p">)</span>
 </pre>
 <p>Also, you will get warnings. That doesn't mean things broke. They are
 there to inform you of what's happening, and that you need to tweak your
@@ -177,7 +187,11 @@ removed in v7, when those warnings will become errors.</p>
     </div>
     
 
-</article><!--End of body content--><footer id="footer">
+</article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
             Contents © 2019         <a href="mailto:prateekmehta.in@gmail.com">Prateek Mehta</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
         </footer>
@@ -185,19 +199,10 @@ removed in v7, when those warnings will become errors.</p>
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(1, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>
-    baguetteBox.run('a.reference:not(.islink)', {
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
-    baguetteBox.run('img:not(.islink)', {
-        captions: function(element) {
-            return element.alt;
-    }});
-    </script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116597400-1"></script><script>
+    </script><!-- end fancy dates --><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116597400-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
