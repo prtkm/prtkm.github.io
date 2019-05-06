@@ -1,5 +1,5 @@
 #+BEGIN_COMMENT
-.. title: Advancing sustainable ammonia synthesis using plasma-enabled catalysis
+.. title: Plasma-enhanced catalysis
 .. slug: ammonia-synthesis
 .. date: 2018-03-25 23:03:15 UTC-04:00
 .. tags: 
@@ -7,7 +7,6 @@
 .. link: 
 .. description: 
 .. type: text
-
 #+END_COMMENT
 
 
@@ -19,12 +18,39 @@ The central idea behind this research is to assist conventional catalysts (metal
 
 *Related Publications*
 
-- P.Mehta, P.Barboun, F.Herrera, J.Kim, P.Rumbach, D.B.Go, J.C.Hicks, W.F. Schneider, Overcoming Ammonia Synthesis Scaling Relations with Plasma-enabled Catalysis. Nature Catalysis, 2018, 1, 269-277, 2018. [[https://doi.org/10.1038/s41929-018-0045-1][DOI: 10.1038/s41929-018-0045-1]]  [[https://zenodo.org/record/1171213#.WrhZjmaZPUI][Supporting Dataset: https://zenodo.org/badge/DOI/10.5281/zenodo.1171213.svg]]
+- P.Mehta, P.Barboun, F.Herrera, J.Kim, P.Rumbach, D.B.Go, J.C.Hicks, W.F. Schneider, Overcoming Ammonia Synthesis Scaling Relations with Plasma-enabled Catalysis. Nature Catalysis, 2018, 1, 269-277, 2018. [[https://doi.org/10.1038/s41929-018-0045-1][DOI: 10.1038/s41929-018-0045-1]]  [[https://zenodo.org/record/1171213#.WrhZjmaZPUI][Supporting Dataset: https://zenodo.org/badge/DOI/10.5281/zenodo.1171213.svg]] [[https://www.nature.com/articles/s41929-018-0068-7][Editorial Highlight]]
 
 #+begin_html
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-badge-details="right" data-badge-type="medium-donut" data-doi="http://10.1038/s41929-018-0045-1" data-hide-no-mentions="true" class="altmetric-embed"></div>
 <span class="__dimensions_badge_embed__" data-doi="10.1038/s41929-018-0045-1" data-legend="always"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-badge-details="right" data-badge-type="medium-donut" data-doi="http://10.1038/s41929-018-0045-1" data-hide-no-mentions="true" class="altmetric-embed"></div>
 #+end_html
+
+
+- F.A. Herrera, G. Brown, P. Barboun, N. Turan, P. Mehta, W.F. Schneider, J.C. Hicks  D.B. Go, The Impact of Transition Metal Catalysts on Macroscopic Dielectric Barrier Discharge (DBD) Characteristics in an Ammonia Synthesis Plasma Catalysis Reactor. Journal of Physics D: Applied Physics, 2019, 52, 224002 [[https://doi.org/10.1088/1361-6463/ab0c58][DOI: 10.1088/1361-6463/ab0c58]]
+
+#+BEGIN_html
+<span class="__dimensions_badge_embed__" data-doi="10.1088/1361-6463/ab0c58" data-hide-zero-citations="true" data-legend="always"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-badge-details="right" data-badge-type="medium-donut" data-doi="http://10.1088/1361-6463/ab0c58" data-hide-no-mentions="true" class="altmetric-embed"></div>
+#+END_html
+
+
+- P. Mehta, P. Barboun, D.B. Go, J.C. Hicks, W.F. Schneider, Catalysis Enabled by Plasma Activation of Strong Chemical Bonds: a Review. ACS Energy Letters, 2019, 4, 1115 [[https://doi.org/10.1021/acsenergylett.9b00263][DOI: 10.1021/acsenergylett.9b00263]] [[https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.9b00263][ACS Editors' Choice PDF]] [[https://pubs.acs.org/doi/10.1021/acsenergylett.9b00891][Energy Selects Highlight]] 
+
+#+BEGIN_html
+<span class="__dimensions_badge_embed__" data-doi="10.1021/acsenergylett.9b00263" data-hide-zero-citations="true" data-legend="always"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-badge-details="right" data-badge-type="medium-donut" data-doi="http://10.1021/acsenergylett.9b00263" data-hide-no-mentions="true" class="altmetric-embed"></div>
+#+END_html
+
+
+- P. Barboun, P. Mehta, F. Herrera, D.B. Go, W.F. Schneider, J.C. Hicks, Distinguishing Plasma Contributions to Catalyst Performance in Plasma-Assisted Ammonia Synthesis. ACS Sustainable Chemistry & Engineering, 2019, 7, 8621 [[http://doi.org/10.1021/acssuschemeng.9b00406][DOI: 10.1021/acssuschemeng.9b00406]]
+
+#+BEGIN_html
+<span class="__dimensions_badge_embed__" data-doi="10.1021/acssuschemeng.9b00406" data-hide-zero-citations="true" data-legend="always"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script><div data-badge-details="right" data-badge-type="medium-donut" data-doi="http://10.1021/acssuschemeng.9b00406" data-hide-no-mentions="true" class="altmetric-embed"></div>
+#+END_html
+
+*Related Cover Art*
+https://prtkm.github.io/images/acs-el-cover.png
 
 
 *Related Poster* 

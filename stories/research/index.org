@@ -12,7 +12,7 @@
 
 Some of my research projects are shown below. Click on the project images for more details.
 
-* [[../../stories/ammonia-synthesis/index.html][Plasma-enabled Catalysis]]
+* [[../../stories/ammonia-synthesis/index.html][Plasma-enhanced Catalysis]]
 [[../../stories/ammonia-synthesis/index.html][https://prtkm.github.io/images/TOC-graphic.png]]
 
 # Ammonia, a precursor to fertilizer, is responsible for feeding a large fraction of the global population. Industrially, ammonia is manufactured by the chemical transformation of nitrogen and hydrogen gases via the Haber-Bosch process. The process typically carried out on the surfaces of solid materials known as catalysts. Even with the best-known catalysts, the process is very energy intensive, and requires very high pressures (100-200 atm) and temperatures (700-800 K) for it to be feasible. Reducing these temperature and pressure requirements are a grand challenge for sustainable ammonia synthesis.
