@@ -50,8 +50,10 @@ The central idea behind this research is to assist conventional catalysts (metal
 #+END_html
 
 *Related Cover Art*
+
 https://prtkm.github.io/images/acs-el-cover.png
 
 
 *Related Poster* 
+
 [[../../files/NH3-poster.pdf][https://prtkm.github.io/images/NH3-poster.png]]
